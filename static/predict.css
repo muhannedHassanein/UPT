@@ -1,0 +1,62 @@
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glass-box {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 4px;
+}
+
+.input-group input {
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #8e2a5d;
+}
+
+.predict-btn {
+  background-color: #6b21a8;
+  padding: 10px 32px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.predict-btn:hover {
+  background-color: #7e22ce;
+}
+
+.result-box {
+  margin-top: 24px;
+  text-align: center;
+  background: rgba(126, 34, 206, 0.7);
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+}

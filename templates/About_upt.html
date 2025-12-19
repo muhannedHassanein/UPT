@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - UPT Underwater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
+</head>
+
+<body class="text-white font-sans">
+
+{% include 'navbar.html' %}
+
+<!-- ================== SECTION 1 | AWARD ================== -->
+<!-- ================== SECTION | AWARD VIDEO ================== -->
+<section class="max-w-6xl mx-auto px-6 py-20">
+  <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-10 shadow-2xl">
+
+    <h2 class="text-3xl font-bold text-center mb-8">
+      Award Ceremony Moment
+    </h2>
+
+    <video controls
+           class="w-full rounded-xl shadow-lg">
+      <source src="{{ url_for('static', filename='media/award_video.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+</section>
+<!-- ================== SECTION | GALLERY ================== -->
+<section class="max-w-6xl mx-auto px-6 py-24">
+  <h2 class="text-3xl font-bold text-center mb-12">Award Gallery</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    <img src="{{ url_for('static', filename='media/gallery/img1.jpg') }}"
+         class="rounded-xl shadow-lg hover:scale-105 transition duration-300 object-cover">
+
+    <img src="{{ url_for('static', filename='media/gallery/img2.jpg') }}"
+         class="rounded-xl shadow-lg hover:scale-105 transition duration-300 object-cover">
+
+    <img src="{{ url_for('static', filename='media/gallery/img3.jpg') }}"
+         class="rounded-xl shadow-lg hover:scale-105 transition duration-300 object-cover">
+
+  </div>
+</section>
+
+
+
+<!-- ================== SECTION 2 | TEAM SLIDER ================== -->
+<section class="max-w-6xl mx-auto px-6 py-24">
+  <h2 class="text-3xl font-bold text-center mb-12">Our Team</h2>
+
+<div id="team-slider" class="flex gap-6 overflow-x-hidden pb-4 scroll-smooth">
+
+    <!-- Member -->
+    <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member1.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Mariem fayed</h3>
+      <p class="text-sm text-gray-300">Team Leader</p>
+    </div>
+      <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member1.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Ahmed Waael</h3>
+      <p class="text-sm text-gray-300">Team Leader</p>
+    </div>
+
+    <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member2.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Member Name</h3>
+      <p class="text-sm text-gray-300">AI Developer</p>
+    </div>
+
+    <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member3.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Member Name</h3>
+      <p class="text-sm text-gray-300">Mechanical</p>
+    </div>
+  
+    <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member2.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Member Name</h3>
+      <p class="text-sm text-gray-300">AI Developer</p>
+    </div>
+
+    <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member3.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Member Name</h3>
+      <p class="text-sm text-gray-300">Mechanical</p>
+    </div>
+      <div class="min-w-[250px] bg-white/10 backdrop-blur-md rounded-xl p-6 text-center">
+      <img src="{{ url_for('static', filename='images/team/member3.jpg') }}"
+           class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+      <h3 class="font-semibold text-lg">Member Name</h3>
+      <p class="text-sm text-gray-300">Mechanical</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================== SECTION 3 | CONTACT ================== -->
+<section class="max-w-4xl mx-auto px-6 pb-24">
+  <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-10 shadow-2xl">
+
+    <h2 class="text-3xl font-bold text-center mb-6">Contact Us</h2>
+
+    <form action="mailto:ma4749@fayoum.edu.eg" method="post" enctype="text/plain"
+          class="grid gap-4">
+
+      <input type="text" placeholder="Your Name"
+             class="p-3 rounded bg-white/20 text-white outline-none">
+
+      <input type="email" placeholder="Your Email"
+             class="p-3 rounded bg-white/20 text-white outline-none">
+
+      <textarea placeholder="Your Message"
+                class="p-3 rounded bg-white/20 text-white outline-none"></textarea>
+
+      <button class="bg-blue-600 hover:bg-blue-700 py-3 rounded-lg transition">
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================== SECTION 4 | SOCIAL ================== -->
+<footer class="pb-10 text-center">
+  <h3 class="text-xl font-semibold mb-4">Follow UPT</h3>
+
+  <div class="flex justify-center gap-6 text-lg">
+    <a href="https://www.instagram.com/unpredictableteam?igsh=dnhtMHdxMW4zb3Fu" target="_blank" class="hover:text-pink-400">Instagram</a>
+    <a href="mailto:uptteam@email.com" class="hover:text-blue-400">Email</a>
+    <a href="https://wa.me/201234567890" target="_blank" class="hover:text-green-400">WhatsApp</a>
+    <a href="https://facebook.com" target="_blank" class="hover:text-blue-500">Facebook</a>
+  </div>
+</footer>
+<script>
+  const slider = document.getElementById("team-slider");
+  let scrollAmount = 0;
+
+  function autoScroll() {
+    scrollAmount += 1;
+    slider.scrollLeft = scrollAmount;
+
+    // لما يوصل للآخر يرجع من الأول
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+      scrollAmount = 0;
+    }
+  }
+
+  setInterval(autoScroll, 20); // السرعة (كل ما قل الرقم أسرع)
+</script>
+
+</body>
+
+</html>

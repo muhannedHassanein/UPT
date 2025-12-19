@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - UPT Underwater</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn { animation: fadeIn 1s ease forwards; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-600 { animation-delay: 0.6s; }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+  {% include 'navbar.html' %}
+
+  <div class="max-w-4xl mx-auto p-8 text-center space-y-6">
+    <h1 class="text-5xl font-extrabold animate-fadeIn">Welcome to UPT Underwater</h1>
+    <p class="text-lg animate-fadeIn delay-200">
+      Explore underwater archaeological sites, monitor sensors, and predict conditions with AI.
+    </p>
+    <div class="space-x-4 mt-6">
+      <a href="/dashboard" class="px-6 py-3 bg-blue-700 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 animate-fadeIn delay-400">Go to Dashboard</a>
+      <a href="/prediction" class="px-6 py-3 bg-purple-700 rounded-lg shadow-lg hover:bg-purple-600 transition duration-300 animate-fadeIn delay-400">AI Prediction</a>
+    </div>
+  </div>
+
+  <!-- Info Cards Section -->
+  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transition transform duration-300">
+      <h2 class="text-xl font-bold mb-2">Heracleion City</h2>
+      <p>An underwater archaeological site near Abu Qir, Alexandria, discovered in 2000. It contains temples, palaces, and was submerged by a flood.</p>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transition transform duration-300">
+      <h2 class="text-xl font-bold mb-2">Diver Monitoring</h2>
+      <p>Special sensors measure temperature, humidity, and water movement to monitor the safety of submerged sites.</p>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 shadow-lg hover:scale-105 transition transform duration-300">
+      <h2 class="text-xl font-bold mb-2">Data Analysis</h2>
+      <p>AI processes sensor data to predict corrosion or changes that might affect underwater archaeological sites.</p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Prediction - UPT Underwater</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
+</head>
+
+<body>
+
+  {% include 'navbar.html' %}
+
+  <div class="max-w-3xl mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold text-center mb-8">AI Prediction</h1>
+
+    <div class="glass-box">
+
+      <form method="POST" action="/predict" class="space-y-4">
+
+        <!-- Depth & Temperature -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="input-group">
+            <label>Depth (m)</label>
+            <input type="number" step="any" name="depth_m" required>
+          </div>
+          <div class="input-group">
+            <label>Temperature (°C)</label>
+            <input type="number" step="any" name="temp_c" required>
+          </div>
+        </div>
+
+        <!-- pH & Salinity -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="input-group">
+            <label>pH</label>
+            <input type="number" step="any" name="pH" required>
+          </div>
+          <div class="input-group">
+            <label>Salinity</label>
+            <input type="number" step="any" name="salinity" required>
+          </div>
+        </div>
+
+        <!-- DO & CO2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="input-group">
+            <label>Dissolved Oxygen</label>
+            <input type="number" step="any" name="dissolved_oxygen" required>
+          </div>
+          <div class="input-group">
+            <label>CO₂ (ppm)</label>
+            <input type="number" step="any" name="co2_ppm" required>
+          </div>
+        </div>
+
+        <!-- Light & Turbidity -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="input-group">
+            <label>Light Intensity</label>
+            <input type="number" step="any" name="light_intensity" required>
+          </div>
+          <div class="input-group">
+            <label>Turbidity</label>
+            <input type="number" step="any" name="turbidity" required>
+          </div>
+        </div>
+
+        <!-- Change Factor -->
+        <div class="input-group">
+          <label>Change Factor</label>
+          <input type="number" step="any" name="change_factor" required>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="predict-btn">Predict</button>
+        </div>
+      </form>
+    </div>
+
+    {% if result %}
+    <div class="result-box">
+      Prediction Result: {{ result }}
+    </div>
+    {% endif %}
+
+  </div>
+
+  <!-- Custom JS -->
+  <script src="{{ url_for('static', filename='predict.js') }}"></script>
+
+</body>
+</html>

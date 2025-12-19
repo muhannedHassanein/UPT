@@ -1,0 +1,53 @@
+<!-- navbar.html -->
+<nav class="bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-600 text-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+          <!-- Logo / Brand -->
+        <div class="flex-shrink-0 flex items-center space-x-3">
+      <img src="{{ url_for('static', filename='images/logo.png') }}"
+          alt="UPT Logo"
+          class="w-9 h-9 object-contain" />
+
+      <span class="font-bold text-xl tracking-wide">
+        UPT 
+      </span>
+    </div>
+
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 font-semibold">
+        <a href="/" class="px-3 py-2 rounded hover:bg-blue-800 transition duration-300">Home</a>
+        <a href="/dashboard" class="px-3 py-2 rounded hover:bg-blue-800 transition duration-300">Dashboard</a>
+        <a href="/prediction" class="px-3 py-2 rounded hover:bg-purple-800 transition duration-300">AI Prediction</a>
+         <a href="/about" class="px-3 py-2 rounded hover:bg-purple-800 transition duration-300">ABOUT US  </a>
+
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-600 via-purple-600 to-indigo-500">
+    <a href="/" class="block px-4 py-2 hover:bg-blue-700 transition duration-300">Home</a>
+    <a href="/dashboard" class="block px-4 py-2 hover:bg-blue-700 transition duration-300">Dashboard</a>
+    <a href="/prediction" class="block px-4 py-2 hover:bg-purple-700 transition duration-300">AI Prediction</a>
+  </div>
+
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</nav>
